@@ -1,6 +1,6 @@
 <h3>List of Todos:</h3>
 <ol class="todo-container">
-  <li class="todo-list-item" *ngFor="let todo of todos">
+  <li class="todo-list-item" *ngFor="let todo of todos; trackBy: trackById">
     {{ todo.title }}
   </li>
 </ol>

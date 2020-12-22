@@ -1,11 +1,21 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
+
+export interface TodoResponse {
+  userId: number;
+  id: number;
+  title: string;
+  completed: boolean;
+}
 
 @Injectable()
 export class ListTodoService {
   constructor(private httpClient: HttpClient) {}
 
-  getAllTodos() {
-    return this.httpClient.get('https://jsonplaceholder.typicode.com/todos');
+  getAllTodos(): Observable<TodoResponse> {
+    return this.httpClient.get(
+      "https://jsonplaceholder.typicode.com/todos"
+    ) as Observable<TodoResponse>;
   }
 }
