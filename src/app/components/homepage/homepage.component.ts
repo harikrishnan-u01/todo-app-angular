@@ -1,4 +1,3 @@
-import { identifierModuleUrl } from "@angular/compiler";
 import { Component, OnInit } from "@angular/core";
 import { ListTodoService, TodoResponse } from "./list.todo.service";
 

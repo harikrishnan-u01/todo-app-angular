@@ -1,20 +1,20 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
 
-import HomepageComponent from './components/homepage/homepage.component';
-import AddTodosComponent from './components/addTodos/add.todos.component';
+import { HomepageComponent } from "./components/homepage";
+import { AddTodosComponent } from "./components/addTodos";
 
 const routes: Routes = [
   {
-    path: '',
+    path: "",
     component: HomepageComponent,
   },
   {
-    path: 'showTodos',
+    path: "showTodos",
     component: HomepageComponent,
   },
   {
-    path: 'addTodo',
+    path: "addTodo",
     component: AddTodosComponent,
   },
 ];
