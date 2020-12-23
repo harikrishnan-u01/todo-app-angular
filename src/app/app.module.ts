@@ -6,11 +6,8 @@ import { CommonModule } from "@angular/common";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 
-import { HomepageComponent } from "./components/homepage";
-import { AddTodosComponent } from "./components/addTodos";
-
 @NgModule({
-  declarations: [AppComponent, HomepageComponent, AddTodosComponent],
+  declarations: [AppComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, CommonModule],
   providers: [],
   bootstrap: [AppComponent],

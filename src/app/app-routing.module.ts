@@ -1,21 +1,32 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
-import { HomepageComponent } from "./components/homepage";
 import { AddTodosComponent } from "./components/addTodos";
 
 const routes: Routes = [
   {
     path: "",
-    component: HomepageComponent,
+    loadChildren: () => {
+      return import("./components/homepage/homepage.module").then(
+        (m) => m.HomepageModule
+      );
+    },
   },
   {
     path: "showTodos",
-    component: HomepageComponent,
+    loadChildren: () => {
+      return import("./components/homepage/homepage.module").then(
+        (m) => m.HomepageModule
+      );
+    },
   },
   {
     path: "addTodo",
-    component: AddTodosComponent,
+    loadChildren: () => {
+      return import("./components/addTodos/add.todos.module").then(
+        (m) => m.AddTodosModule
+      );
+    },
   },
 ];
 
