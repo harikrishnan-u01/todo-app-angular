@@ -28,6 +28,14 @@ const routes: Routes = [
       );
     },
   },
+  {
+    path: "charts",
+    loadChildren: () => {
+      return import("./components/charts/charts.module").then(
+        (m) => m.ChartsModule
+      );
+    },
+  },
 ];
 
 @NgModule({
