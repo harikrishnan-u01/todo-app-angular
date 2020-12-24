@@ -9,18 +9,28 @@ import { ListTodoService, TodoResponse } from "./list.todo.service";
 })
 export default class HomepageComponent implements OnInit {
   todos: TodoResponse[];
+  completedTodos: TodoResponse[];
   constructor(private listTodoService: ListTodoService) {
     this.todos = [];
+    this.completedTodos = [];
   }
   ngOnInit() {
     this.listTodoService.getAllTodos().subscribe((data: any) => {
-      console.log("data--->", data);
-      this.todos = data;
+      // console.log("data--->", data);
+      const todo = data.filter((single: TodoResponse) => {
+        return single.completed;
+      });
+      const completed = data.filter((single: TodoResponse) => {
+        return !single.completed;
+      });
+
+      this.todos = todo;
+      this.completedTodos = completed;
     });
   }
 
   trackById(index: number, todo: TodoResponse) {
-    console.log("Id==>", todo.id);
+    // console.log("Id==>", todo.id);
     return todo.id;
   }
 }
