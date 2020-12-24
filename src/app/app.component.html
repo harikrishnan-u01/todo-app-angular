@@ -1,11 +1,28 @@
 <h2>Todo application</h2>
 
-<nav>
-  <ul>
-    <li><a routerLink="showTodos">Show TODOs</a></li>
-    <li><a routerLink="addTodo">Add TODOs</a></li>
-    <li><a routerLink="charts">Charts Playground</a></li>
-  </ul>
+<nav mat-tab-nav-bar [color]="'primary'" [backgroundColor]="'primary'">
+  <a
+    mat-tab-link
+    routerLink="showTodos"
+    [active]="activeLink === 1"
+    (click)="activeLink = 1"
+  >
+    Show TODOs</a
+  >
+  <a
+    mat-tab-link
+    routerLink="addTodo"
+    [active]="activeLink === 2"
+    (click)="activeLink = 2"
+    >Add TODOs</a
+  >
+  <a
+    mat-tab-link
+    routerLink="charts"
+    [active]="activeLink === 3"
+    (click)="activeLink = 3"
+    >Charts Playground</a
+  >
 </nav>
 
 <router-outlet></router-outlet>

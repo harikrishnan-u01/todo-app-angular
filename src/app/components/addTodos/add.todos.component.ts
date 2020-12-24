@@ -7,6 +7,8 @@ import { Router } from "@angular/router";
   styleUrls: ["./add.todos.component.less"],
 })
 export default class AddTodosComponent {
+  checked: boolean = true;
+
   constructor(private router: Router) {}
 
   cancelAddTodo() {

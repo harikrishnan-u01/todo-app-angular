@@ -1,24 +1,30 @@
 <h3>Add Todo:</h3>
 <div class="add-todo-container">
-  <div class="todo-form-control-container">
-    <label for="todo-description">Description</label>
-    <input
-      id="todo-description"
-      type="text"
-      value=""
-      placeholder="description"
-    />
-  </div>
-  <div class="todo-form-control-container">
-    <label for="todo-completed">Completed</label>
-    <input id="todo-completed" type="checkbox" value="" />
-  </div>
+  <mat-form-field appearance="fill" class="todo-form-control-container">
+    <mat-label>Description</mat-label>
+    <input matInput placeholder="description" />
+  </mat-form-field>
 
-  <div class="todo-form-control-container">
-    <button (click)="cancelAddTodo()">Save</button>
-  </div>
+  <mat-checkbox
+    class="example-margin"
+    [(ngModel)]="checked"
+    class="todo-form-control-container"
+    >Checked</mat-checkbox
+  >
 
-  <div class="todo-form-control-container">
-    <button (click)="cancelAddTodo()">Cancel</button>
-  </div>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="cancelAddTodo()"
+    class="todo-form-control-container"
+  >
+    Save
+  </button>
+  <button
+    mat-raised-button
+    (click)="cancelAddTodo()"
+    class="todo-form-control-container"
+  >
+    Cancel
+  </button>
 </div>
