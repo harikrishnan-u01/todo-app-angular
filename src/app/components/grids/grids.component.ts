@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { ColDef } from "ag-grid-community";
+import { ListTodoService } from "../../list.todo.service";
 
 @Component({
   selector: "grids",
@@ -7,19 +8,24 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ["./grids.component.less"],
 })
 export default class GridsComponent implements OnInit {
-  columnDefs = [
-    { field: "make", sortable: true, filter: true },
-    { field: "model", sortable: true, filter: true },
-    { field: "price", sortable: true, filter: true },
+  columnDefs: ColDef[] = [
+    { field: "id", sortable: true, filter: true },
+    { field: "userId", sortable: true, filter: true },
+    {
+      field: "title",
+      sortable: true,
+      filter: true,
+      flex: 1,
+      minWidth: 500,
+    },
+    { field: "completed", sortable: true, filter: true },
   ];
 
   rowData: any;
 
-  constructor(private http: HttpClient) {}
+  constructor(private listTodoService: ListTodoService) {}
 
   ngOnInit() {
-    this.rowData = this.http.get(
-      "https://raw.githubusercontent.com/ag-grid/ag-grid/master/grid-packages/ag-grid-docs/src/sample-data/smallRowData.json"
-    );
+    this.rowData = this.listTodoService.getAllTodos();
   }
 }

@@ -13,9 +13,9 @@ export interface TodoResponse {
 export class ListTodoService {
   constructor(private httpClient: HttpClient) {}
 
-  getAllTodos(): Observable<TodoResponse> {
+  getAllTodos(): Observable<TodoResponse[]> {
     return this.httpClient.get(
       "https://jsonplaceholder.typicode.com/todos"
-    ) as Observable<TodoResponse>;
+    ) as Observable<TodoResponse[]>;
   }
 }

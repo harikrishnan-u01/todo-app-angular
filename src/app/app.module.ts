@@ -9,6 +9,7 @@ import { MatTabsModule } from "@angular/material/tabs";
 import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppSharedService } from "./app.shared.service";
+import { ListTodoService } from "./list.todo.service";
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +21,7 @@ import { AppSharedService } from "./app.shared.service";
     BrowserAnimationsModule,
     MatTabsModule,
   ],
-  providers: [AppSharedService],
+  providers: [AppSharedService, ListTodoService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,10 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import { ListTodoService, TodoResponse } from "./list.todo.service";
+import { ListTodoService, TodoResponse } from "../../list.todo.service";
 
 @Component({
   selector: "homepage",
   templateUrl: "./homepage.component.html",
-  providers: [ListTodoService],
   styleUrls: ["./homepage.component.less"],
 })
 export default class HomepageComponent implements OnInit {
