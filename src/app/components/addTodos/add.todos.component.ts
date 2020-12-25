@@ -40,7 +40,6 @@ export default class AddTodosComponent {
       .subscribe((response) => {
         console.log("response-->", response);
         this.savedData = response;
-        // this.cancelAddTodo();
       });
   }
 }

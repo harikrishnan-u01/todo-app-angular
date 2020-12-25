@@ -2,7 +2,19 @@
 <div class="charts-container">
   <highcharts-chart
     [Highcharts]="Highcharts"
-    [options]="chartOptions"
-    style="width: 100%; height: 400px; display: block"
+    [options]="lineChartOptions"
+    class="chart"
+  ></highcharts-chart>
+
+  <highcharts-chart
+    [Highcharts]="Highcharts"
+    [options]="pieChartOptions"
+    class="chart"
+  ></highcharts-chart>
+
+  <highcharts-chart
+    [Highcharts]="Highcharts"
+    [options]="columnChartOptions"
+    class="chart"
   ></highcharts-chart>
 </div>
