@@ -34,6 +34,14 @@ const routes: Routes = [
       );
     },
   },
+  {
+    path: "grids",
+    loadChildren: () => {
+      return import("./components/grids/grids.module").then(
+        (m) => m.GridsModule
+      );
+    },
+  },
 ];
 
 @NgModule({

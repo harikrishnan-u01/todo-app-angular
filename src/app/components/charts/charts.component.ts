@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-import { Router } from "@angular/router";
 import * as Highcharts from "highcharts";
 
 @Component({
@@ -15,12 +14,6 @@ export default class ChartsComponent {
   lineChartOptions: Highcharts.Options = this.getLineChartOptions();
 
   pieChartOptions: Highcharts.Options = this.getPieChartOptions();
-
-  constructor(private router: Router) {}
-
-  cancelAddTodo(): void {
-    this.router.navigate(["showTodos"]);
-  }
 
   getColumnChartOptions(): Highcharts.Options {
     return {
