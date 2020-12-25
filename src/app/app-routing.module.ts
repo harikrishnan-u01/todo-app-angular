@@ -1,8 +1,6 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
-import { AddTodosComponent } from "./components/addTodos";
-
 const routes: Routes = [
   {
     path: "",
