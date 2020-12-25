@@ -5,7 +5,8 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatCheckboxModule } from "@angular/material/checkbox";
-import { FormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
+import { MatCardModule } from "@angular/material/card";
 
 import AddTodosComponent from "./add.todos.component";
 
@@ -17,7 +18,8 @@ import AddTodosComponent from "./add.todos.component";
     MatFormFieldModule,
     MatCheckboxModule,
     MatInputModule,
-    FormsModule,
+    ReactiveFormsModule,
+    MatCardModule,
   ],
   declarations: [AddTodosComponent],
 })
