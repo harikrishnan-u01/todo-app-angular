@@ -25,7 +25,7 @@ export default class GridsComponent implements OnInit {
 
   constructor(private listTodoService: ListTodoService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.rowData = this.listTodoService.getAllTodos();
   }
 }
