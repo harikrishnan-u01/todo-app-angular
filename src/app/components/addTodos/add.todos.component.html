@@ -16,6 +16,7 @@
     <button
       mat-raised-button
       type="submit"
+      color="primary"
       [disabled]="!todoForm.valid"
       class="todo-form-control-container"
     >
@@ -23,7 +24,6 @@
     </button>
     <button
       mat-raised-button
-      color="primary"
       type="button"
       (click)="cancelAddTodo()"
       class="todo-form-control-container"
@@ -32,26 +32,5 @@
     </button>
   </form>
 
-  <mat-card *ngIf="savedData">
-    <mat-card-header>
-      <mat-card-title>Save Response</mat-card-title>
-    </mat-card-header>
-
-    <mat-card-content>
-      <div>
-        <strong>UserId:</strong
-        ><span appHighlight> {{ savedData.userId }}</span>
-      </div>
-      <div>
-        <strong>Title:</strong> <span appHighlight>{{ savedData.title }}</span>
-      </div>
-      <div>
-        <strong>Completed:</strong>
-        <span appHighlight>{{ savedData.completed }}</span>
-      </div>
-      <div>
-        <strong>Id:</strong> <span appHighlight>{{ savedData.id }}</span>
-      </div>
-    </mat-card-content></mat-card
-  >
+  <add-result [savedData]="savedData"></add-result>
 </div>

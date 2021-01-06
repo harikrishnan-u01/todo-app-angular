@@ -10,6 +10,7 @@ import { MatCardModule } from "@angular/material/card";
 
 import AddTodosComponent from "./add.todos.component";
 import { HighlightDirective } from "../addTodos/highlight.directive";
+import AddResultComponent from "./addResult/add.result.component";
 
 @NgModule({
   imports: [
@@ -22,6 +23,6 @@ import { HighlightDirective } from "../addTodos/highlight.directive";
     ReactiveFormsModule,
     MatCardModule,
   ],
-  declarations: [AddTodosComponent, HighlightDirective],
+  declarations: [AddTodosComponent, HighlightDirective, AddResultComponent],
 })
 export class AddTodosModule {}

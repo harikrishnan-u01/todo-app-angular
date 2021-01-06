@@ -1,4 +1,10 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+} from "@angular/core";
 import { Subscription } from "rxjs";
 import { ListTodoService, TodoResponse } from "../../list.todo.service";
 
@@ -6,13 +12,17 @@ import { ListTodoService, TodoResponse } from "../../list.todo.service";
   selector: "homepage",
   templateUrl: "./homepage.component.html",
   styleUrls: ["./homepage.component.less"],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class HomepageComponent implements OnInit, OnDestroy {
   todos: TodoResponse[];
   completedTodos: TodoResponse[];
   listTodosSubscription$: Subscription | undefined;
 
-  constructor(private listTodoService: ListTodoService) {
+  constructor(
+    private listTodoService: ListTodoService,
+    private changeRef: ChangeDetectorRef
+  ) {
     this.todos = [];
     this.completedTodos = [];
   }
@@ -31,6 +41,8 @@ export default class HomepageComponent implements OnInit, OnDestroy {
 
         this.todos = todo;
         this.completedTodos = completed;
+
+        this.changeRef.detectChanges();
       });
   }
 
