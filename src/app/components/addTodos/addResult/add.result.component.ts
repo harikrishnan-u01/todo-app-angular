@@ -8,5 +8,5 @@ import { TodoResponse } from "../add.todo.service";
 })
 export default class AddResultComponent {
   @Input()
-  savedData: TodoResponse | null = null;
+  savedData: TodoResponse | undefined;
 }
