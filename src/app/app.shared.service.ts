@@ -1,7 +1,9 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable } from "rxjs";
 
-@Injectable()
+@Injectable({
+  providedIn: "root",
+})
 export class AppSharedService {
   private selectedTab = new BehaviorSubject(1);
   private selectedTabObservable = this.selectedTab.asObservable();

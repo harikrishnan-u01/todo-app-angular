@@ -9,7 +9,9 @@ export interface TodoResponse {
   completed: boolean;
 }
 
-@Injectable()
+@Injectable({
+  providedIn: "root",
+})
 export class ListTodoService {
   constructor(private httpClient: HttpClient) {}
 
