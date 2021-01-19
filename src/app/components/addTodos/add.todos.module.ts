@@ -9,7 +9,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { MatCardModule } from "@angular/material/card";
 
 import AddTodosComponent from "./add.todos.component";
-import { HighlightDirective } from "../addTodos/highlight.directive";
+import { HighlightDirective } from "../addTodos/addResult/highlight.directive";
 import AddResultComponent from "./addResult/add.result.component";
 
 @NgModule({
